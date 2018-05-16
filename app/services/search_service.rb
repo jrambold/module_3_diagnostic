@@ -1,6 +1,5 @@
 class SearchService
   def initialize
-    @headers = { authorizations: "x-api-key #{ENV['NREL_API_KEY']}" }
   end
 
   def get_url(url)
