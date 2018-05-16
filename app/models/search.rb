@@ -10,7 +10,7 @@ class Search
     stations = raw_stations[:fuel_stations].map do |station|
       Station.new(station[:station_name],station[:street_address],station[:fuel_type_code],station[:distance],station[:access_days_time])
     end
-    stations
+    stations.sort_by(&:distance)
   end
 
 end
