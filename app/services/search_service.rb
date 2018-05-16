@@ -1,4 +1,4 @@
-class Search
+class SearchService
   def initialize
     @headers = { authorizations: "x-api-key #{ENV['NREL_API_KEY']}" }
   end
@@ -12,6 +12,6 @@ class Search
     attr_reader :headers
 
     def conn
-      Faraday.new('https://developer.nrel.gov/', headers: headers)
+      Faraday.new('https://developer.nrel.gov', headers: headers)
     end
 end
